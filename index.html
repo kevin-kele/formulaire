@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css_form/style.css">
+    <title>Kwick</title>
+</head>
+
+<body>
+
+    <div id="connexion">
+
+        <form id="connect_form" method="post" action="user_login.html">
+            <h1>Kwick Kwick</h1>
+
+            <p>
+                <label for="pseudo" id="login">login:</label>
+                <input type="text" name="pseudo" id="pseudo" placeholder="Enter Email" />
+
+                <br />
+                <label for="pass" id="password">password:</label>
+                <input type="password" name="pass" id="pass_connexion" placeholder="Enter Password" />
+
+            </p>
+
+            <span id="signup">Connexion</span>
+            <span id="account">Create an account</span>
+        </form>
+    </div>
+    <div id="inscription">
+        <form name="mon-formulaire1" method="POST">
+            <p>
+                <label for="email">Email</label><br/>
+                <input id="mail" type="text" placeholder="Enter Email" name="email" required class="mail">
+            </p>
+            <p>
+                <label for="psw">Password</label><br/>
+                <input id="pass" type="password" name="psw" required>
+
+                <p>
+                    <label for="psw-repeat">Repeat Password</label><br/>
+                    <input id="pass2" type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                </p>
+
+
+                <span id="envoyer">Envoyer</span>
+        </form>
+    </div>
+
+    <script src="./kiwck/jquery.js"></script>
+    <script src="./kiwck/devKwick.js">
+    </script>
+    <script>
+        $(document).ready(function() {
+            app.init();
+        });
+    </script>
+</body>
+
+</html>
