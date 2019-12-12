@@ -30,6 +30,7 @@ const app = {
         $('#envoyer').on('click', app.signup);
         $('#signup').on('click', app.login);
         $('#LogOut').on('click', app.logout);
+        $('.chat_list').on('click', app.logged);
 
 
 
@@ -98,6 +99,8 @@ const app = {
                 success: function(result, status, xhrlt) {
                     console.log(result);
                     $('#connect_form').submit();
+                    localStorage.setItem('token', result.result.token);
+                    localStorage.setItem('id2', result.result.id);
                 },
                 error: function(xhr, status, error) {
                     alert('Errorrrrr');
@@ -110,19 +113,51 @@ const app = {
     },
     logout: function() {
         // recupere les donner stoker dans ma variable
-        let token = localStorage.getItem('id', token);
+
+        let token = localStorage.getItem('token');
+        let id2 = localStorage.getItem('id2');
         console.log(token)
+        console.log(id2)
 
 
         $.ajax({
-            url: 'http://greenvelvet.alwaysdata.net/kwick/logout/' + token + '/' + user1,
+            url: 'http://greenvelvet.alwaysdata.net/kwick/api/logout/' + token + '/' + id2,
 
             dataType: 'jsonp',
             type: 'POST',
             contentType: 'application/json; charset=utf-8',
             success: function(result, status, xhrlt) {
                 console.log(result);
-                $('#userLogin').submit();
+                window.location.href = 'index.html'
+                alert('tes deco')
+            },
+            error: function(xhr, status, error) {
+                alert('Errorrrrr');
+
+            }
+        })
+
+
+
+    },
+    logged: function() {
+        // recupere les donner stoker dans ma variable
+
+        let token = localStorage.getItem('token');
+        let id2 = localStorage.getItem('id2');
+        console.log(token)
+        console.log(id2)
+
+
+        $.ajax({
+            url: 'http://greenvelvet.alwaysdata.net/kwick/api/user/logged/' + token,
+
+            dataType: 'jsonp',
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            success: function(result, status, xhrlt) {
+                console.log(result);
+
             },
             error: function(xhr, status, error) {
                 alert('Errorrrrr');
@@ -133,5 +168,6 @@ const app = {
 
 
     }
+
 
 };
