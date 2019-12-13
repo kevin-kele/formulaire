@@ -66,6 +66,11 @@ button {
     padding: 4px;
 }
 
+#pass2 {
+    border: 1px solid;
+    padding: 4px;
+}
+
 a {
     border-radius: 2px;
     text-decoration: none;
@@ -85,6 +90,7 @@ a {
 }
 
 #mail {
+    border: 1px solid black;
     padding: 4px;
 }
 
@@ -102,4 +108,20 @@ a {
     margin: -15%;
     margin-left: 3%;
     float: center;
+}
+
+.typo {
+    font: italic 1.2em "Trebuchet", serif;
+}
+
+#envoyer {
+    font: italic 1.2em "Trebuchet", serif;
+    border-radius: 10px 100px / 120px;
+}
+
+#envoyer:hover,
+#mail:hover,
+#pass:hover,
+#pass2:hover {
+    background-color: #32d418;
 }
