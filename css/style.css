@@ -31,12 +31,6 @@ img {
     width: 40%;
 }
 
-.srch_bar {
-    display: inline-block;
-    text-align: right;
-    width: 60%;
-}
-
 .headind_srch {
     padding: 10px 29px 10px 20px;
     overflow: hidden;
@@ -47,26 +41,6 @@ img {
     color: #05728f;
     font-size: 21px;
     margin: auto;
-}
-
-.srch_bar input {
-    border: 1px solid #cdcdcd;
-    border-width: 0 0 1px 0;
-    width: 80%;
-    padding: 2px 0 4px 6px;
-    background: none;
-}
-
-.srch_bar .input-group-addon button {
-    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-    border: medium none;
-    padding: 0;
-    color: #707070;
-    font-size: 18px;
-}
-
-.srch_bar .input-group-addon {
-    margin: 0 0 0 -27px;
 }
 
 .chat_ib h5 {
@@ -109,7 +83,7 @@ img {
 }
 
 .chat_list:hover {
-    background-color: rgb(230, 81, 81);
+    background-color: #32d418;
 }
 
 .inbox_chat {
@@ -135,7 +109,7 @@ img {
 
 .received_withd_msg p {
     background: #ebebeb none repeat scroll 0 0;
-    border-radius: 3px;
+    border-radius: 25px;
     color: #646464;
     font-size: 14px;
     margin: 0;
@@ -154,6 +128,11 @@ img {
     width: 57%;
 }
 
+.text-center {
+    font: italic 3.2em "Trebuchet", serif !important;
+    text-align: center !important;
+}
+
 .mesgs {
     float: left;
     padding: 30px 15px 0 25px;
@@ -162,7 +141,7 @@ img {
 
 .sent_msg p {
     background: #05728f none repeat scroll 0 0;
-    border-radius: 3px;
+    border-radius: 24px;
     font-size: 14px;
     margin: 0;
     color: #fff;
@@ -231,10 +210,14 @@ img {
     margin-left: 87%;
 }
 
-#carre {
+#LogOut {
     order: 1px solid;
-    height: 15px;
-    width: 5px;
-    background-color: seashell;
+    border-radius: 10px 100px / 120px;
+    height: 29px;
+    width: 78px;
+    background-color: #f90023;
     margin: 12px;
+    color: white;
+    float: left;
+    text-align: center;
 }

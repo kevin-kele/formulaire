@@ -30,7 +30,14 @@ const app = {
         $('#envoyer').on('click', app.signup);
         $('#signup').on('click', app.login);
         $('#LogOut').on('click', app.logout);
-        $('.chat_list').on('click', app.logged);
+        $('.chat_ib').replaceWith(app.logged);
+
+        // $('.sent_msg').on('click', app.talk);
+
+
+
+        // $('.chat_list').replace(localStorage.getItem('token'), result.result.user);
+
 
 
 
@@ -71,6 +78,7 @@ const app = {
                     console.log(result);
                     localStorage.setItem('id', user1);
                     localStorage.setItem('password', password);
+
                 },
                 error: function(xhr, status, error) {
                     alert('Errorrrrr');
@@ -101,6 +109,8 @@ const app = {
                     $('#connect_form').submit();
                     localStorage.setItem('token', result.result.token);
                     localStorage.setItem('id2', result.result.id);
+                    localStorage.setItem('mess', result.result.message);
+                    localStorage.setItem('talk', result.result.timestamp);
                 },
                 error: function(xhr, status, error) {
                     alert('Errorrrrr');
@@ -116,8 +126,10 @@ const app = {
 
         let token = localStorage.getItem('token');
         let id2 = localStorage.getItem('id2');
+
         console.log(token)
         console.log(id2)
+
 
 
         $.ajax({
@@ -129,7 +141,7 @@ const app = {
             success: function(result, status, xhrlt) {
                 console.log(result);
                 window.location.href = 'index.html'
-                alert('tes deco')
+                alert('bey bey ;)')
             },
             error: function(xhr, status, error) {
                 alert('Errorrrrr');
@@ -141,12 +153,10 @@ const app = {
 
     },
     logged: function() {
-        // recupere les donner stoker dans ma variable
-
         let token = localStorage.getItem('token');
         let id2 = localStorage.getItem('id2');
-        console.log(token)
-        console.log(id2)
+        let utilisateur = localStorage.getItem('user');
+        console.log(utilisateur)
 
 
         $.ajax({
@@ -157,6 +167,8 @@ const app = {
             contentType: 'application/json; charset=utf-8',
             success: function(result, status, xhrlt) {
                 console.log(result);
+                // localStorage.setItem('mesgs', result.result.message)
+
 
             },
             error: function(xhr, status, error) {
@@ -167,7 +179,71 @@ const app = {
 
 
 
-    }
+    },
+    say: function() {
+        let token = localStorage.getItem('token');
+        let id2 = localStorage.getItem('id2');
+        // let message = localStorage.getItem('mesgs');
+        let writ = $(".write_msg").val();
+        console.log(writ)
+        console.log(token)
+        console.log(id2)
+
+
+        $.ajax({
+            url: 'http://greenvelvet.alwaysdata.net/kwick/api/say/' + token + '/' + id2 + '/' + writ,
+
+            dataType: 'jsonp',
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            success: function(result, status, xhrlt) {
+                for (let k = 0; k < result.result.user.length; k++) {
+                    $('.text-center').after('<div class=\"inbox_chat\">\
+                    <div class="chat_list.active_chat"></div><div class=\"chat_img\"' + result.result.user[k] + '</div>');
+
+                }
+                console.log(result);
+
+
+            },
+            error: function(xhr, status, error) {
+                alert('Errorrrrr');
+
+            }
+        })
+
+
+
+
+    },
+    talk: function() {
+        let token = localStorage.getItem('token');
+        let id2 = localStorage.getItem('id2');
+        let timestamp = 0;
+
+
+
+        $.ajax({
+            url: 'http://greenvelvet.alwaysdata.net/kwick/api/talk/list/' + token + '/' + timestamp,
+
+            dataType: 'jsonp',
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            success: function(result, status, xhrlt) {
+                console.log(result);
+
+
+            },
+            error: function(xhr, status, error) {
+                alert('Errorrrrr');
+
+            }
+        })
+
+
+
+    },
+
 
 
 };

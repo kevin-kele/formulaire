@@ -3,17 +3,48 @@ div {
     align-items: center;
     justify-content: center;
     height: 500px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     background-color: aliceblue;
     width: auto;
     margin-left: 25%;
     margin-right: 25%;
     margin-top: 10%;
-    box-shadow: 2px 2px 32px red;
+    box-shadow: 2px 2px 32px #32d418;
+    border-radius: 30px;
 }
 
 #login {
-    margin-right: 26.8px;
+    margin-right: 42.8px;
+    font: italic 1.2em "Trebuchet", serif;
+}
+
+#password {
+    font: italic 1.2em "Trebuchet", serif;
+    margin-right: 8.8px;
+}
+
+#signup {
+    border-radius: 40px;
+    border-radius: 10px 100px / 120px;
+    margin-right: 10px;
+    padding: 3px;
+}
+
+#account {
+    /* border: 1px solid; */
+    border-radius: 10px 100px / 120px;
+    padding: 3px;
+}
+
+#signup:hover,
+#account:hover {
+    background-color: #32d418;
+}
+
+#pass_connexion {
+    border: 1px solid;
+    padding: 4px;
+    border-radius: 30px;
 }
 
 button {
@@ -24,6 +55,8 @@ button {
 
 #pseudo {
     border: 1px solid;
+    border-radius: 30px;
+    /* border-radius: 10% 30% 50% 70%; */
     margin-bottom: 10px;
     padding: 4px;
 }
@@ -46,8 +79,9 @@ a {
     display: none;
 }
 
-input:hover {
-    background-color: rgb(20, 228, 255);
+#pseudo:hover,
+#pass_connexion:hover {
+    background-color: #32d418;
 }
 
 #mail {
@@ -56,4 +90,16 @@ input:hover {
 
 .pass {
     padding: 4px;
+}
+
+.titrelogo {
+    height: 281px;
+    width: 200;
+    width: 500px;
+    /* margin: -43px; */
+    position: absolute;
+    /* margin-top: 14%; */
+    margin: -15%;
+    margin-left: 3%;
+    float: center;
 }

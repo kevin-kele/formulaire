@@ -16,9 +16,10 @@
 
     <body>
         <div class="container" id="userLogin" action="index.html">
-            <h3 class=" text-center">WELCOM IN KIWCK KIWCK</h3>
+
+            <h3 class=" text-center">WELCOM IN MONEY MESSENGER</h3>
             <!-- <button type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"><div></div></i></button> -->
-            <span id="LogOut">LogOut</span>
+            <span id="LogOut">Log out</span>
             <div class="messaging">
                 <div class="inbox_msg">
                     <div class="inbox_people">
@@ -26,13 +27,7 @@
                             <div class="recent_heading">
                                 <h4>Recent</h4>
                             </div>
-                            <div class="srch_bar">
-                                <div class="stylish-input-group">
-                                    <input type="text" class="search-bar" placeholder="Search">
-                                    <span class="input-group-addon">
-                                <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
-                                </span> </div>
-                            </div>
+
                         </div>
                         <div class="inbox_chat">
                             <div class="chat_list active_chat">
@@ -157,6 +152,8 @@
         <script>
             $(document).ready(function() {
                 app.init();
+                app.logged();
+                app.talk();
             });
         </script>
     </body>
